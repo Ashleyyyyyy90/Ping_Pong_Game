@@ -80,7 +80,7 @@ while game:
         ball.rect.y += speed_y
 
         if sprite.collide_rect(paddleLeft, ball) or sprite.collide_rect(paddleRight, ball):
-            speed_x *= 1
+            speed_x *= -1
             speed_y *= 2
 
         #ball bounces when hit the up or bottom wall
