@@ -46,9 +46,9 @@ paddleA_img = "blue.png"
 paddleB_img = "red.png"
 ball_img = "ball.png"
 
-paddleLeft = Paddle (paddleA_img, 20, 200, 30, 150, 150)
-paddleRight = Paddle (paddleB_img, 650, 200, 30, 150, 150)
-ball = GameSprite(ball_img, 330, 200, 50, 50, 50)
+paddleLeft = Paddle (paddleA_img, 20, 200, 30, 150, 10)
+paddleRight = Paddle (paddleB_img, 540, 200, 30, 150, 10)
+ball = GameSprite(ball_img, 330, 200, 50, 50, 100)
 
 
 #game loop
@@ -80,8 +80,8 @@ while game:
         ball.rect.y += speed_y
 
         if sprite.collide_rect(paddleLeft, ball) or sprite.collide_rect(paddleRight, ball):
-            speed_x *= -1
-            speed_y *= 1
+            speed_x *= 1
+            speed_y *= 2
 
         #ball bounces when hit the up or bottom wall
         if ball.rect.y > win_height-50 or ball.rect.y < 0:
